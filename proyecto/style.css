@@ -1,0 +1,213 @@
+/* VARIABLES GLOBALES */
+:root {
+  --bg: #000000;      /* fondo principal */
+  --text: #ffffff;    /* texto blanco */
+  --text-2: #d3d3d3;  /* texto secundario */
+  --primary: #1E90FF; /* azul eléctrico */
+  --accent: #39FF14;  /* verde neón */
+  --muted: #111111;   /* fondo para barras */
+  --border: #1f1f1f;  /* bordes discretos */
+}
+
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;
+}
+
+main.container {
+  flex: 1;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* HEADER: LOGO + ACCIONES */
+.top-bar {
+  background: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 6vw;
+  border-bottom: 1px solid var(--border);
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo i {
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+.logo h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* BUSCADOR */
+.search-bar {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  max-width: 500px;
+}
+.search-bar input {
+  width: 80%;
+  padding: 8px 12px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+.search-bar button {
+  padding: 8px 14px;
+  background: var(--primary);
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  color: #000;
+}
+.search-bar button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ACCIONES USUARIO */
+.user-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-actions .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.user-actions .action:hover {
+  color: var(--text);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--muted);
+  border: 2px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+  transition: all 0.2s ease;
+}
+
+.user-actions .action:hover .icon-circle {
+  border-color: var(--accent);
+  background: rgba(57,255,20,0.2);
+}
+
+.icon-circle .icon {
+  width: 30px;  /* tamaño más grande */
+  height: 30px;
+  object-fit: contain;
+}
+
+/* LAYOUT: SIDEBAR + CONTENT */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  padding: 20px 6vw;
+}
+.sidebar {
+  background: #0b0b0b;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.sidebar h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  margin: 8px 0;
+}
+.sidebar a {
+  color: var(--text-2);
+  transition: color 0.2s;
+}
+.sidebar a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, rgba(30,144,255,.2), rgba(57,255,20,.1));
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(30,144,255,.5);
+}
+.hero p {
+  color: var(--text-2);
+}
+
+/* NAVBAR */
+.navbar {
+  background: #0a0a0a;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; /* permite scroll en pantallas pequeñas */
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;  /* centrado horizontal */
+  gap: 20px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+.navbar a {
+  padding: 6px 10px;
+  color: var(--text-2);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.navbar a:hover {
+  background: rgba(57,255,20,.1);
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--muted);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+}
