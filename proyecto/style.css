@@ -9,6 +9,52 @@
   --border: #1f1f1f;  /* bordes discretos */
 }
 
+
+/*top bar con redes sociales*/
+.top-bar.thin {
+  background: var(--primary);  
+  color: white;
+  font-size: 13px;
+  padding: 4px 6vw;           
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar.thin .social span {
+  margin-right: 10px;
+}
+
+.top-bar.thin .social a {
+  margin-left: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.top-bar.thin .user-links a {
+  margin-left: 15px;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.top-bar.thin .user-links a:hover {
+  color: var(--accent);
+}
+
+/* Separador entre enlaces de barra delagada*/
+.top-bar.thin .user-links a::after {
+  content: '|';
+  margin-left: 10px;
+  color: white;
+}
+
+.top-bar.thin .user-links a:last-child::after {
+  content: '';
+}
+
+
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,15 +77,15 @@ a { text-decoration: none; color: inherit; }
 
 /* HEADER: LOGO + ACCIONES */
 .top-bar {
-  background: var(--muted);
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 6vw;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--muted);
 }
 
-/* LOGO */
+/* logo */
 .logo {
   display: flex;
   align-items: center;
@@ -56,7 +102,7 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
 }
 
-/* BUSCADOR */
+/* Buscador */
 .search-bar {
   display: flex;
   flex: 1;
@@ -83,7 +129,7 @@ a { text-decoration: none; color: inherit; }
   color: #000;
 }
 
-/* ACCIONES USUARIO */
+/* acciones de usuario */
 .user-actions {
   display: flex;
   gap: 20px;
@@ -135,11 +181,10 @@ a { text-decoration: none; color: inherit; }
   gap: 20px;
   padding: 20px 6vw;
 }
+
+/*efecto categoria*/
 .sidebar {
-  background: #0b0b0b;
-  padding: 15px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  padding: 15px 0px;  
 }
 .sidebar h3 {
   font-family: 'Orbitron', sans-serif;
@@ -160,7 +205,37 @@ a { text-decoration: none; color: inherit; }
   color: var(--accent);
 }
 
-/* HERO */
+/* Estilo para categoria raya debajo */
+.sidebar ul li a {
+  display: block;
+  padding: 6px 0px;
+  color: var(--text-2);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado animado */
+.sidebar ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+  transition: width 0.3s ease;
+}
+.sidebar ul li a:hover::after {
+  width: 100%;
+}
+
+/* Quitar la última rayita de categoria */
+.sidebar ul li:last-child a {
+  border-bottom: none;
+}
+
+
+/* contenido principal*/
 .hero {
   background: linear-gradient(to right, rgba(30,144,255,.2), rgba(57,255,20,.1));
   text-align: center;
@@ -168,6 +243,7 @@ a { text-decoration: none; color: inherit; }
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
 .hero h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -176,6 +252,25 @@ a { text-decoration: none; color: inherit; }
 .hero p {
   color: var(--text-2);
 }
+
+/* Animación de pulso neón */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 10px cyan, 0 0 20px blue; }
+  25%  { box-shadow: 0 0 20px #FF00FF, 0 0 40px #FFD700; }   
+  50% { box-shadow: 0 0 10px violet, 0 0 20px magenta; }
+  75% { box-shadow: 0 0 10px #1E90FF, 0 0 20px #39FF14; }
+  100% { box-shadow: 0 0 10px cyan, 0 0 20px blue; }
+}
+
+.hero {
+  background: linear-gradient(to right, rgba(30,144,255,.2), rgba(57,255,20,.1));
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: neonPulse 6s linear infinite;
+}
+
 
 /* NAVBAR */
 .navbar {
@@ -203,7 +298,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--accent);
 }
 
-/* FOOTER */
+/* FOOTER  pie de pagina*/
 footer {
   text-align: center;
   padding: 20px;
