@@ -7,6 +7,8 @@
   --accent: #39FF14;  /* verde neón */
   --muted: #111111;   /* fondo para barras */
   --border: #1f1f1f;  /* bordes discretos */
+  --mg: #FF00FF;    /* magenta neon*/
+
 }
 
 
@@ -288,15 +290,18 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 .navbar a {
+  font-family: 'Roboto', sans-serif;
   padding: 6px 10px;
   color: var(--text-2);
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 .navbar a:hover {
-  background: rgba(57,255,20,.1);
+  background: rgba(57,255,20,0.1);
   color: var(--accent);
 }
+
+
 
 /* FOOTER  pie de pagina*/
 footer {
