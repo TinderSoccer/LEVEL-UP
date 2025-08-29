@@ -244,6 +244,8 @@ a { text-decoration: none; color: inherit; }
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 20px;
+  animation: neonPulse 6s infinite alternate;
+  box-shadow: 0 0 20px var(--primary), 0 0 40px var(--accent);
 }
 
 .hero h2 {
@@ -264,14 +266,14 @@ a { text-decoration: none; color: inherit; }
   100% { box-shadow: 0 0 10px cyan, 0 0 20px blue; }
 }
 
-.hero {
-  background: linear-gradient(to right, rgba(30,144,255,.2), rgba(57,255,20,.1));
-  text-align: center;
-  padding: 40px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  animation: neonPulse 6s linear infinite;
+.divider {
+  height: 3px;
+  background: linear-gradient(90deg, #1E90FF, #39FF14, #FF00FF);
+  border-radius: 2px;
+  margin: 20px 0;
+  width: 100%;
 }
+
 
 
 /* NAVBAR */
@@ -344,36 +346,68 @@ a { text-decoration: none; color: inherit; }
 
 
 .productos-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
   gap: 10px;
+  position: relative; /* para que las flechas se posicionen bien */
 }
 
 
-.arrow {
-  background: none;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  padding: 5px;
-  color: #333;
+.arrow { 
+  background: none; 
+  border: none; 
+  font-size: 28px; 
+  cursor: pointer; 
+  padding: 5px; color: #333; }
+.arrow:hover { color: var(--accent); 
 }
+
+.arrow.left {
+  margin-right: 15px; /* espacio a la derecha del botón izquierdo */
+}
+
+.arrow.right {
+  margin-left: 15px; /* espacio a la izquierda del botón derecho */
+}
+
 
 
 .productos-lista {
   display: flex;
   gap: 20px;
+  overflow-x: auto;        /* esencial */
+  scroll-behavior: smooth; /* movimiento suave */
+  scrollbar-width: none;   /* opcional, oculta scroll en Firefox */
 }
 
 
 .producto img {
   width: 200px;        
-  height: 200x;
+  height: 200px;
   object-fit: contain; 
   display: block;
   margin: 0 auto 10px;
 }
+
+.divider {
+  width: 90%;
+  max-width: 1200px;
+  height: 2px;
+  background: linear-gradient(90deg, #1E90FF, #39FF14, #FF00FF);
+  margin: 10px auto 20px;
+  border-radius: 2px;
+}
+
+.content {
+  max-width: 1200px;    /* igual que en tiendas reales */
+  margin: 0 auto;       /* centra todo */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;            /* espacio entre secciones */
+}
+
 
 
 /* FOOTER  pie de pagina*/
