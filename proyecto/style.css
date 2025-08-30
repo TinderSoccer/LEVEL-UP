@@ -352,23 +352,22 @@ a { text-decoration: none; color: inherit; }
   gap: 10px;
   position: relative; /* para que las flechas se posicionen bien */
 }
+.arrow{
+  background: none;
+  border: 1px solid var(--border);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 10px;
+  color: var(--text-2);
+  border-radius: 10px;
+  transition: background .2s, color .2s, transform .06s;
 
 
-.arrow { 
-  background: none; 
-  border: none; 
-  font-size: 28px; 
-  cursor: pointer; 
-  padding: 5px; color: #333; }
-.arrow:hover { color: var(--accent); 
 }
-
-.arrow.left {
-  margin-right: 15px; /* espacio a la derecha del botón izquierdo */
-}
-
-.arrow.right {
-  margin-left: 15px; /* espacio a la izquierda del botón derecho */
+.arrow:hover { background:#0f0f0f; color: var(--accent); }
+.arrow:active { transform: scale(.98); }
+.arrow[aria-disabled="true"], .arrow:disabled{
+  opacity:.4; cursor:not-allowed; filter:grayscale(100%);
 }
 
 
@@ -417,4 +416,46 @@ footer {
   background: var(--muted);
   border-top: 1px solid var(--border);
   color: var(--text-2);
+}
+/* carrusel */
+
+.productos .productos-container { 
+  max-width: 780px;         
+  margin: 0 auto;
+}
+/* Lista de productos en carrusel */
+.productos-lista {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;       
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory; 
+}
+.productos-lista::-webkit-scrollbar { display: none; } 
+
+.producto { 
+  flex: 0 0 auto; 
+  scroll-snap-align: center;
+}
+/* Estado de arrastre */
+.productos-lista.dragging { cursor: grabbing; scroll-behavior: auto; }
+
+.arrow{
+  background: none;
+  border: 1px solid var(--border);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 10px;
+  color: var(--text-2);         
+  border-radius: 10px;
+  transition: background .2s, color .2s, transform .06s;
+
+
+}
+.arrow:hover { background:#0f0f0f; color: var(--accent); }
+.arrow:active { transform: scale(.98); }
+.arrow[aria-disabled="true"], .arrow:disabled{
+  opacity:.4; cursor:not-allowed; filter:grayscale(100%);
 }
