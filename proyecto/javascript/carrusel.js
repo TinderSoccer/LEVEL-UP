@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const lista = container.querySelector('.productos-lista');
     const flechaIzquierda = container.querySelector('.arrow.left');
     const flechaDerecha = container.querySelector('.arrow.right');
-    const anchoPaso = lista.clientWidth; // Desplazamiento de una "página"
+    const anchoPaso = lista.clientWidth; 
 
     if (!lista || !flechaIzquierda || !flechaDerecha) return;
 
-    // Función para actualizar el estado de los botones (habilitado/deshabilitado)
+    // Función para actualizar el estado 
     const actualizarBotones = () => {
       flechaIzquierda.disabled = lista.scrollLeft === 0;
       flechaDerecha.disabled = lista.scrollLeft + anchoPaso >= lista.scrollWidth;
@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Actualiza los botones al iniciar y al desplazarse
     lista.addEventListener('scroll', actualizarBotones);
-    actualizarBotones(); // Llama a la función al cargar la página
+    actualizarBotones(); 
   });
 });
