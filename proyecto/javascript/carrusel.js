@@ -1,3 +1,13 @@
+// Función para establecer datos del producto (usada en index.html)
+function setProductData(id, nombre, imagen, categoria) {
+  localStorage.setItem('selectedProduct', JSON.stringify({
+    id: id,
+    nombre: nombre,
+    imagen: imagen,
+    categoria: categoria
+  }));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.productos-container').forEach(container => {
     const lista = container.querySelector('.productos-lista');
