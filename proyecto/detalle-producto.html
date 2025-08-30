@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Producto - Level-Up Gamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra superior  redes sociales y enlaces-->
+  <div class="top-bar thin">
+  <div class="social">
+    <span>Síguenos en redes sociales</span>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <div class="user-links">
+    <a href="#">Nuestras tiendas</a>     
+    <a href="#">Regístrate</a>     
+    <a href="#">Mi cuenta</a>
+  </div>
+</div>
+
+  <!-- Barra superior -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <i class="fa-solid fa-gamepad"></i>
+        <h1>Level-Up Gamer</h1>
+      </div>
+
+      <!-- Buscador -->
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!-- Acciones usuario -->
+      <div class="user-actions">
+        <a href="#" class="action">
+          <div class="icon-circle">
+            <img src="icons/favoritos.png" alt="Favoritos" class="icon">
+          </div>
+          <span>Mis Favoritos</span>
+        </a>
+        <a href="#" class="action">
+          <div class="icon-circle">
+            <img src="icons/carrito.png" alt="Carrito" class="icon">
+          </div>
+          <span>Carrito</span>
+        </a>
+        <a href="#" class="action">
+          <div class="icon-circle">
+            <img src="icons/usuario.png" alt="Usuario" class="icon">
+          </div>
+          <span>Iniciar Sesión</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú de navegación principal -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Juegos🎲</a></li>
+        <li><a href="#">Accesorios🎧</a></li>
+        <li><a href="#">Consolas🎮</a></li>
+        <li><a href="#">Computadores Gamers🖥️</a></li>
+        <li><a href="#">Sillas Gamers🪑</a></li>
+        <li><a href="#">Ropa Gamer👕</a></li>
+        <li><a href="#">Servicio Técnico</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a> > <span id="breadcrumb-category">Categoría</span> > <span id="breadcrumb-product">Producto</span>
+  </div>
+
+  <!-- Detalle del producto -->
+  <main class="product-detail-container">
+    <div class="product-detail">
+      
+      <!-- Imagen del producto -->
+      <div class="product-image">
+        <img id="product-main-image" src="" alt="Producto" />
+        <div class="product-thumbnails">
+        </div>
+      </div>
+
+      <!-- Información del producto -->
+      <div class="product-info">
+        <h1 id="product-title">Nombre del Producto</h1>
+        <div class="product-rating">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <span>(125 reseñas)</span>
+        </div>
+        
+        <div class="product-price">
+          <span class="current-price" id="product-price">$0</span>
+          <span class="original-price" id="product-original-price">$0</span>
+          <span class="discount" id="product-discount"></span>
+        </div>
+
+        <div class="product-description">
+          <p id="product-description">Descripción del producto...</p>
+        </div>
+
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
+            <input type="number" id="quantity" value="1" min="1" readonly>
+            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+          </div>
+          
+          <button class="btn-add-cart">
+            <i class="fas fa-shopping-cart"></i>
+            Agregar al Carrito
+          </button>
+          
+          <button class="btn-favorite">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+
+        <div class="product-features">
+          <h3>Características principales:</h3>
+          <ul id="product-features-list">
+          </ul>
+        </div>
+
+        <div class="shipping-info">
+          <div class="shipping-option">
+            <i class="fas fa-truck"></i>
+            <div>
+              <strong>Envío gratis</strong>
+              <p>En compras superiores a $50.000</p>
+            </div>
+          </div>
+          <div class="shipping-option">
+            <i class="fas fa-store"></i>
+            <div>
+              <strong>Retiro en tienda</strong>
+              <p>Disponible en todas nuestras sucursales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Especificaciones técnicas -->
+    <section class="product-specifications">
+      <h2>Especificaciones Técnicas</h2>
+      <div class="specs-grid" id="specs-grid">
+      </div>
+    </section>
+
+    <!-- Productos relacionados -->
+    <section class="related-products">
+      <h2>Productos Relacionados</h2>
+      <div class="productos-container">
+        <div class="productos-lista" id="related-products-list">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Level-Up Gamer | Síguenos en redes sociales</p>
+  </footer>
+  
+  <script src="javascript/producto-detalle.js"></script>
+</body>
+</html>
